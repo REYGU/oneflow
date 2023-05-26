@@ -15,9 +15,11 @@ limitations under the License.
 */
 
 #include "oneflow/core/auto_parallel/sbp_constructor.h"
+#include <iostream>
 #include "oneflow/core/auto_parallel/auto_memory.h"
 #include "oneflow/core/auto_parallel/sbp_node.h"
 #include "oneflow/core/auto_parallel/sbp_util.h"
+#include "oneflow/core/common/just.h"
 #include "oneflow/core/common/singleton.h"
 #include "oneflow/core/device/cuda_util.h"
 #include "oneflow/core/framework/sbp_infer_util.h"
@@ -520,10 +522,55 @@ void SbpConstructor::PrintSBPGraphDebugInfo() {
   auto_parallel::DecideOrder(node_list, order, [&](OpNode* a, OpNode* b) {
     return a->op().op_name().compare(b->op().op_name()) > 0;
   });
+
+  // get cost by running time start
+
+  std::cout << "--------------------------------------------------------------" << std::endl;
+  std::cout << "------------------get cost by running time start--------------" << std::endl;
+  double total_comp_cost_0 = 0;
+  for (int32_t i = 0; i < node_list.size(); i++) {
+    OpNode* op_node = node_list[order[i]];
+    std::cout << op_node->op().op_name() << " (^_^): " << op_node->op().op_conf().op_type_case()
+              << std::endl;
+    auto LogicalBlobDesc4Bn = [&](const std::string& bn) -> const BlobDesc& {
+      const LogicalBlobId& lbi = op_node->op().BnInOp2Lbi(bn);
+      return op_node->LogicalBlobDesc4Lbi(lbi);
+    };
+    const ParallelDesc& parallel_desc = op_node->parallel_desc();
+
+    SbpNode* sbp_node = op_name2sbp_node_[op_node->op().op_name()];
+
+    // auto GetCompCost = [&](int32_t sbp_id) -> Maybe<void> {
+    //   double comp_cost = JUST(op_node->op().GetComputeComplexity(
+    //       &sbp_node->sbp_sig_list_[sbp_id], LogicalBlobDesc4Bn, parallel_desc));
+    //   return Maybe<void>::Ok();
+    // };
+
+    std::cout << "sbp_node->sbp_sig_list_.size(): " << sbp_node->sbp_sig_list_.size() << std::endl;
+    double comp_cost = CHECK_JUST(op_node->op().GetComputeComplexity(
+        &sbp_node->sbp_sig_list_[sbp_node->final_sbp_sig_id_], LogicalBlobDesc4Bn, parallel_desc));
+
+    // if (comp_cost > GetValidMaxCopyCost()) {
+    //   sbp_node->cost_[sbp_id] = comp_cost;
+    // } else {
+    //   sbp_node->cost_[sbp_id] =
+    //       cost_ratio_ * comp_cost
+    //       * JUST(op_node->op().GetInputOutputFastestTimeShape())->elem_cnt();
+    // }
+    std::cout << "comp_cost: " << comp_cost << std::endl;
+    total_comp_cost_0 += comp_cost;
+    // for (int32_t sbp_id = 0; sbp_id < sbp_node->sbp_sig_list_.size(); sbp_id++) {
+    // }
+  }
+  std::cout << "Total cost: " << total_comp_cost_0 << std::endl;
+  std::cout << "--------------------------------------------------------------" << std::endl;
+  // get cost by running time end
+
   std::vector<int32_t> str_order;
 
   // test debug
   std::cout << "Finish deciding order" << std::endl;
+  double total_cost = 0;
 
   for (int32_t i = 0; i < node_list.size(); i++) {
     OpNode* op_node = node_list[order[i]];
@@ -533,7 +580,9 @@ void SbpConstructor::PrintSBPGraphDebugInfo() {
     // Print debug information for sbp graph
     CHECK(it != op_name2sbp_node_.end());
     const SbpNode* sbp_node = it->second;
-    std::cout << "Computation Cost: " << sbp_node->weighted_cost_[sbp_node->final_sbp_sig_id_];
+    double node_cost = sbp_node->weighted_cost_[sbp_node->final_sbp_sig_id_];
+    total_cost += node_cost;
+    std::cout << "Computation Cost: " << node_cost;
     std::cout << ", Min Layer: " << sbp_node->min_layer_ << ", Max Layer: " << sbp_node->max_layer_
               << ", Tributary Layer: " << sbp_node->tributary_layer_
               << ", in trunk: " << sbp_node->on_trunk_
@@ -570,6 +619,8 @@ void SbpConstructor::PrintSBPGraphDebugInfo() {
     }
     std::cout << std::endl;
   }
+
+  std::cout << "Total cost: " << total_cost << std::endl;
 }
 
 }  // namespace auto_parallel

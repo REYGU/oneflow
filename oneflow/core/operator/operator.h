@@ -26,6 +26,7 @@ limitations under the License.
 #include "oneflow/core/job/sbp_parallel.h"
 #include "oneflow/core/job/local_parallel.pb.h"
 #include "oneflow/core/operator/op_conf_util.h"
+#include "oneflow/core/operator/compute_complexity.h"
 #include "oneflow/core/register/blob_desc.h"
 #include "oneflow/core/job/job_builder.h"
 #include "oneflow/core/job/sbp_signature_builder.h"

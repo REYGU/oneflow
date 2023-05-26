@@ -48,6 +48,10 @@ class VariableOp final : public Operator {
                                   std::function<Maybe<const NdSbpInferHint*>(const std::string&)>
                                       NdSbpInferHint4Ibn) const override;
   DumpNdSbpSignatureForOpConfFn GetDumpNdSbpSignatureForOpConfFn() const override;
+  Maybe<double> GetComputeComplexity(
+      NdSbpSignature* sbp_signature,
+      std::function<const BlobDesc&(const std::string& bn)> logical_blob_desc4bn,
+      const ParallelDesc& parallel_desc) const override;
 };
 
 }  // namespace oneflow
