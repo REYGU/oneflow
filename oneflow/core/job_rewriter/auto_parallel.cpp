@@ -36,12 +36,14 @@ class AutoParallelPass final : public JobPass {
   Maybe<void> Apply(const OpGraph& op_graph, Job* job) const;
 
   Maybe<void> Apply(Job* job, JobPassCtx* ctx) const override {
+    const OpGraph op_graph(*job);
+    if (GlobalProcessCtx::Rank() == 0) { op_graph.PrintSBPGraphDebugInfo(); }
     if (!job->job_conf().enable_auto_parallel()) { return Maybe<void>::Ok(); }
     VLOG(3) << "=== Enable AutoParallel ===";
     if (job->job_conf().enable_auto_parallel_ignore_user_sbp_config()) {
       JUST(RemoveParallelCastOps(job));
     }
-    const OpGraph op_graph(*job);
+    // const OpGraph op_graph(*job);
     return Apply(op_graph, job);
   }
 
@@ -62,7 +64,7 @@ Maybe<void> AutoParallelPass::Apply(const OpGraph& op_graph, Job* job) const {
           << std::chrono::duration_cast<std::chrono::milliseconds>(time_end - time_begin).count()
           << " ms\n";
   if (GlobalProcessCtx::Rank() == 0) {
-    // sbp_constructor.PrintSBPGraphDebugInfo();
+    sbp_constructor.PrintSBPGraphDebugInfo();
     JUST(sbp_constructor.CheckSbpAgreement(*job));
   }
   return Maybe<void>::Ok();

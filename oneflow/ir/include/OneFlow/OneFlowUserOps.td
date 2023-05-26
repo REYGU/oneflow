@@ -513,6 +513,7 @@ def OneFlow_PowOp : OneFlow_BaseOp<"pow", [NoMemoryEffect, DeclareOpInterfaceMet
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_FracOp : OneFlow_BaseOp<"frac", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -710,6 +711,7 @@ def OneFlow_BroadcastAddOp : OneFlow_BaseOp<"broadcast_add", [NoMemoryEffect, De
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_BroadcastDivOp : OneFlow_BaseOp<"broadcast_div", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -725,6 +727,7 @@ def OneFlow_BroadcastDivOp : OneFlow_BaseOp<"broadcast_div", [NoMemoryEffect, De
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
   let hasFolder = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_BroadcastDivGradOp : OneFlow_BaseOp<"broadcast_div_grad", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -754,6 +757,7 @@ def OneFlow_BroadcastEqualOp : OneFlow_BaseOp<"broadcast_equal", [NoMemoryEffect
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_BroadcastFloorModOp : OneFlow_BaseOp<"broadcast_floor_mod", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -782,6 +786,7 @@ def OneFlow_BroadcastFmodOp : OneFlow_BaseOp<"broadcast_fmod", [NoMemoryEffect, 
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_BroadcastGreaterOp : OneFlow_BaseOp<"broadcast_greater", [NoMemoryEffect, NoGrad, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -824,6 +829,7 @@ def OneFlow_BroadcastGreaterEqualOp : OneFlow_BaseOp<"broadcast_greater_equal", 
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_BroadcastLessOp : OneFlow_BaseOp<"broadcast_less", [NoMemoryEffect, NoGrad, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -838,6 +844,7 @@ def OneFlow_BroadcastLessOp : OneFlow_BaseOp<"broadcast_less", [NoMemoryEffect, 
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_BroadcastLessEqualOp : OneFlow_BaseOp<"broadcast_less_equal", [NoMemoryEffect, NoGrad, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -852,6 +859,7 @@ def OneFlow_BroadcastLessEqualOp : OneFlow_BaseOp<"broadcast_less_equal", [NoMem
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_BroadcastIsCloseEqualNanOp : OneFlow_BaseOp<"broadcast_isclose_eq_nan", [NoMemoryEffect, NoGrad, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -906,6 +914,7 @@ def OneFlow_BroadcastLikeOp : OneFlow_BaseOp<"broadcast_like", [NoMemoryEffect, 
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
   let has_input_arg_modify_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_BroadcastLogicalAndOp : OneFlow_BaseOp<"broadcast_logical_and", [NoMemoryEffect, NoGrad, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -920,6 +929,7 @@ def OneFlow_BroadcastLogicalAndOp : OneFlow_BaseOp<"broadcast_logical_and", [NoM
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_BroadcastLogicalOrOp : OneFlow_BaseOp<"broadcast_logical_or", [NoMemoryEffect, NoGrad, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -934,6 +944,7 @@ def OneFlow_BroadcastLogicalOrOp : OneFlow_BaseOp<"broadcast_logical_or", [NoMem
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_BroadcastLogicalXorOp : OneFlow_BaseOp<"broadcast_logical_xor", [NoMemoryEffect, NoGrad, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -948,6 +959,7 @@ def OneFlow_BroadcastLogicalXorOp : OneFlow_BaseOp<"broadcast_logical_xor", [NoM
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_BroadcastMaximumOp : OneFlow_BaseOp<"broadcast_maximum", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -991,6 +1003,7 @@ def OneFlow_BroadcastMulOp : OneFlow_BaseOp<"broadcast_mul", [NoMemoryEffect, De
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
   let hasFolder = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_BroadcastNotEqualOp : OneFlow_BaseOp<"broadcast_not_equal", [NoMemoryEffect, NoGrad, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -1005,6 +1018,7 @@ def OneFlow_BroadcastNotEqualOp : OneFlow_BaseOp<"broadcast_not_equal", [NoMemor
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_BroadcastPowOp : OneFlow_BaseOp<"broadcast_pow", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -1019,6 +1033,7 @@ def OneFlow_BroadcastPowOp : OneFlow_BaseOp<"broadcast_pow", [NoMemoryEffect, De
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_BroadcastSubOp : OneFlow_BaseOp<"broadcast_sub", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -1034,6 +1049,7 @@ def OneFlow_BroadcastSubOp : OneFlow_BaseOp<"broadcast_sub", [NoMemoryEffect, De
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
   let hasFolder = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_BitwiseNotOp : OneFlow_BaseOp<"bitwise_not", [NoMemoryEffect, NoGrad, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -2464,6 +2480,7 @@ def OneFlow_FusedBiasAddGeluOp : OneFlow_BaseOp<"fused_bias_add_gelu", [NoMemory
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_FusedBiasAddGeluGradOp : OneFlow_BaseOp<"fused_bias_add_gelu_grad", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -2504,6 +2521,7 @@ def OneFlow_FusedBiasAddMaskScaleOp : OneFlow_BaseOp<"fused_bias_add_mask_scale"
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
   let has_input_arg_modify_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_FusedCastScaleOp : OneFlow_BaseOp<"fused_cast_scale", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -2562,6 +2580,7 @@ def OneFlow_FusedScaleMaskSoftmaxDropoutOp : OneFlow_BaseOp<"fused_scale_mask_so
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
   let has_input_arg_modify_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_FusedScaleMaskSoftmaxDropoutGradOp : OneFlow_BaseOp<"fused_scale_mask_softmax_dropout_grad", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -3341,26 +3360,41 @@ def OneFlow_FusedCodegeexQkvReshapeOp : OneFlow_BaseOp<"fused_codegeex_qkv_resha
 
 #ifdef GET_ONEFLOW_IDEMPOTENT_OP_DEFINITIONS
 
-def OneFlow_AbsOp : OneFlow_IdempotentBaseOp<"abs", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {}
+def OneFlow_AbsOp : OneFlow_IdempotentBaseOp<"abs", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
+  let has_compute_complexity_fn = 1;
+}
 
-def OneFlow_CeilOp : OneFlow_IdempotentBaseOp<"ceil", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {}
+def OneFlow_CeilOp : OneFlow_IdempotentBaseOp<"ceil", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
+  let has_compute_complexity_fn = 1;
+}
 
-def OneFlow_FloorOp : OneFlow_IdempotentBaseOp<"floor", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {}
+def OneFlow_FloorOp : OneFlow_IdempotentBaseOp<"floor", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
+  let has_compute_complexity_fn = 1;
+}
 
 def OneFlow_OnesLikeOp : OneFlow_IdempotentBaseOp<"ones_like", [NoMemoryEffect, NoGrad, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
   let same_output_regst_num = 1;
   let has_nd_sbp_infer_fn = 1;
   let input = (ins AnyType:$like);
   let output = (outs AnyType:$out);
+  let has_compute_complexity_fn = 1;
 }
 
-def OneFlow_ReluOp : OneFlow_IdempotentBaseOp<"relu", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>, DeclareOpInterfaceMethods<NCHWCompatibleInterface>]> {}
+def OneFlow_ReluOp : OneFlow_IdempotentBaseOp<"relu", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>, DeclareOpInterfaceMethods<NCHWCompatibleInterface>]> {
+  let has_compute_complexity_fn = 1;
+}
 
-def OneFlow_RintOp : OneFlow_IdempotentBaseOp<"rint", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {}
+def OneFlow_RintOp : OneFlow_IdempotentBaseOp<"rint", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
+  let has_compute_complexity_fn = 1;
+}
 
-def OneFlow_RoundOp : OneFlow_IdempotentBaseOp<"round", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {}
+def OneFlow_RoundOp : OneFlow_IdempotentBaseOp<"round", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
+  let has_compute_complexity_fn = 1;
+}
 
-def OneFlow_SignOp : OneFlow_IdempotentBaseOp<"sign", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {}
+def OneFlow_SignOp : OneFlow_IdempotentBaseOp<"sign", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
+  let has_compute_complexity_fn = 1;
+}
 
 #endif // GET_ONEFLOW_IDEMPOTENT_OP_DEFINITIONS
 
@@ -3403,6 +3437,7 @@ def OneFlow_IdentityOp : OneFlow_BaseOp<"identity", [NoMemoryEffect, DeclareOpIn
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_IdentityBufferOp : OneFlow_BaseOp<"identity_buffer", [NoMemoryEffect, NoGrad, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -3959,6 +3994,7 @@ def OneFlow_SliceOp : OneFlow_BaseOp<"slice", [NoMemoryEffect, DeclareOpInterfac
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_SliceUpdateOp : OneFlow_BaseOp<"slice_update", [SupportNonContiguous, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -4221,9 +4257,13 @@ def OneFlow_ModeOp: OneFlow_BaseOp<"mode", [NoMemoryEffect, DeclareOpInterfaceMe
 
 #ifdef GET_ONEFLOW_INVOLUTION_OP_DEFINITIONS
 
-def OneFlow_NegativeOp : OneFlow_InvolutionBaseOp<"negative", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {}
+def OneFlow_NegativeOp : OneFlow_InvolutionBaseOp<"negative", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
+  let has_compute_complexity_fn = 1;
+}
 
-def OneFlow_ReciprocalOp : OneFlow_InvolutionBaseOp<"reciprocal", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {}
+def OneFlow_ReciprocalOp : OneFlow_InvolutionBaseOp<"reciprocal", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
+  let has_compute_complexity_fn = 1;
+}
 
 #endif // GET_ONEFLOW_INVOLUTION_OP_DEFINITIONS
 
@@ -4438,6 +4478,7 @@ def OneFlow_ErfOp : OneFlow_BaseOp<"erf", [NoMemoryEffect, DeclareOpInterfaceMet
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_ErfGradOp : OneFlow_BaseOp<"erf_grad", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -4465,6 +4506,7 @@ def OneFlow_ExpOp : OneFlow_BaseOp<"exp", [NoMemoryEffect, DeclareOpInterfaceMet
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_ExpGradOp : OneFlow_BaseOp<"exp_grad", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -4492,6 +4534,7 @@ def OneFlow_Exp2Op : OneFlow_BaseOp<"exp2", [NoMemoryEffect, DeclareOpInterfaceM
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_Exp2GradOp : OneFlow_BaseOp<"exp2_grad", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -4519,6 +4562,7 @@ def OneFlow_Expm1Op : OneFlow_BaseOp<"expm1", [NoMemoryEffect, DeclareOpInterfac
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_Expm1GradOp : OneFlow_BaseOp<"expm1_grad", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -4607,6 +4651,7 @@ def OneFlow_LgammaOp : OneFlow_BaseOp<"lgamma", [NoMemoryEffect, DeclareOpInterf
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_LgammaGradOp : OneFlow_BaseOp<"lgamma_grad", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -4635,6 +4680,7 @@ def OneFlow_DigammaOp : OneFlow_BaseOp<"digamma", [NoMemoryEffect, DeclareOpInte
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_DigammaGradOp : OneFlow_BaseOp<"digamma_grad", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -4662,6 +4708,7 @@ def OneFlow_TrigammaOp : OneFlow_BaseOp<"trigamma", [NoMemoryEffect, DeclareOpIn
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_LogOp : OneFlow_BaseOp<"log", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -4675,6 +4722,7 @@ def OneFlow_LogOp : OneFlow_BaseOp<"log", [NoMemoryEffect, DeclareOpInterfaceMet
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_Log1pOp : OneFlow_BaseOp<"log1p", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -4688,6 +4736,7 @@ def OneFlow_Log1pOp : OneFlow_BaseOp<"log1p", [NoMemoryEffect, DeclareOpInterfac
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_Log1pGradOp : OneFlow_BaseOp<"log1p_grad", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -4757,6 +4806,7 @@ def OneFlow_LogSigmoidOp : OneFlow_BaseOp<"log_sigmoid", [NoMemoryEffect, Declar
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_LogSigmoidGradOp : OneFlow_BaseOp<"log_sigmoid_grad", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -4798,6 +4848,7 @@ def OneFlow_ReciprocalNoNanOp : OneFlow_BaseOp<"reciprocal_no_nan", [NoMemoryEff
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_ReciprocalNoNanGradOp : OneFlow_BaseOp<"reciprocal_no_nan_grad", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -4825,6 +4876,7 @@ def OneFlow_RsqrtOp : OneFlow_BaseOp<"rsqrt", [NoMemoryEffect, DeclareOpInterfac
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_RsqrtGradOp : OneFlow_BaseOp<"rsqrt_grad", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -4854,6 +4906,7 @@ def OneFlow_SigmoidOp : OneFlow_BaseOp<"sigmoid", [NoMemoryEffect, DeclareOpInte
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_SigmoidGradOp : OneFlow_BaseOp<"sigmoid_grad", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -4885,6 +4938,7 @@ def OneFlow_SoftplusOp : OneFlow_BaseOp<"softplus", [NoMemoryEffect, DeclareOpIn
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_SoftplusGradOp : OneFlow_BaseOp<"softplus_grad", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -4951,6 +5005,7 @@ def OneFlow_SqrtOp : OneFlow_BaseOp<"sqrt", [NoMemoryEffect, DeclareOpInterfaceM
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
   let hasFolder = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_SqrtGradOp : OneFlow_BaseOp<"sqrt_grad", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -4978,6 +5033,7 @@ def OneFlow_SquareOp : OneFlow_BaseOp<"square", [NoMemoryEffect, DeclareOpInterf
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_SquareGradOp : OneFlow_BaseOp<"square_grad", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -5289,6 +5345,7 @@ def OneFlow_ErfcOp : OneFlow_BaseOp<"erfc", [NoMemoryEffect, DeclareOpInterfaceM
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_ErfcGradOp : OneFlow_BaseOp<"erfc_grad", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -5645,6 +5702,7 @@ def OneFlow_AddNOp : OneFlow_BaseOp<"add_n", [NoMemoryEffect, DeclareOpInterface
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_ArangeOp : OneFlow_BaseOp<"arange", [NoMemoryEffect, NoGrad, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -5781,6 +5839,7 @@ def OneFlow_DropoutOp : OneFlow_BaseOp<"dropout", [NoMemoryEffect, DeclareOpInte
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_ElementwiseMaximumBackwardOp : OneFlow_BaseOp<"elementwise_maximum_backward", [NoMemoryEffect, AttrSizedResultSegments, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -5990,6 +6049,7 @@ def OneFlow_NLLOp : OneFlow_BaseOp<"nll", [NoMemoryEffect, DeclareOpInterfaceMet
   let has_logical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_input_arg_modify_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_NLLGradOp : OneFlow_BaseOp<"nll_grad", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -6893,6 +6953,7 @@ def OneFlow_LayerNormOp : OneFlow_BaseOp<"layer_norm", [NoMemoryEffect, AttrSize
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_SkipLayerNormOp : OneFlow_BaseOp<"skip_layer_norm", [NoMemoryEffect, AttrSizedOperandSegments, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -8265,6 +8326,7 @@ def OneFlow_ReduceAllOp : OneFlow_BaseOp<"reduce_all", [NoMemoryEffect, DeclareO
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_ReduceAnyOp : OneFlow_BaseOp<"reduce_any", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -8282,6 +8344,7 @@ def OneFlow_ReduceAnyOp : OneFlow_BaseOp<"reduce_any", [NoMemoryEffect, DeclareO
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_ReduceMaxOp : OneFlow_BaseOp<"reduce_max", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -8299,6 +8362,7 @@ def OneFlow_ReduceMaxOp : OneFlow_BaseOp<"reduce_max", [NoMemoryEffect, DeclareO
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_ReduceMaxDeviceStageOp : OneFlow_BaseOp<"reduce_max_device_stage", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -8391,6 +8455,7 @@ def OneFlow_ReduceMinOp : OneFlow_BaseOp<"reduce_min", [NoMemoryEffect, DeclareO
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_ReduceMinDeviceStageOp : OneFlow_BaseOp<"reduce_min_device_stage", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -8483,6 +8548,7 @@ def OneFlow_ReduceProdOp : OneFlow_BaseOp<"reduce_prod", [NoMemoryEffect, Declar
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_ReduceSumOp : OneFlow_BaseOp<"reduce_sum", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -8500,6 +8566,7 @@ def OneFlow_ReduceSumOp : OneFlow_BaseOp<"reduce_sum", [NoMemoryEffect, DeclareO
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_ReduceNanSumOp : OneFlow_BaseOp<"reduce_nansum", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -8517,6 +8584,7 @@ def OneFlow_ReduceNanSumOp : OneFlow_BaseOp<"reduce_nansum", [NoMemoryEffect, De
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_ReduceSumLikeOp : OneFlow_BaseOp<"reduce_sum_like", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -8558,6 +8626,7 @@ def OneFlow_ReshapeOp : OneFlow_BaseOp<"reshape", [NoMemoryEffect, DeclareOpInte
   let has_enumerate_nd_sbp_signatures_fn = 1;
   let has_data_type_infer_fn = 1;
   let hasFolder = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_ReshapeLikeOp : OneFlow_BaseOp<"reshape_like", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -8707,6 +8776,7 @@ def OneFlow_ScalarAddOp : OneFlow_BaseOp<"scalar_add", [NoMemoryEffect, DeclareO
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
   let hasFolder = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_ScalarAddByTensorOp : OneFlow_BaseOp<"scalar_add_by_tensor", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -8807,6 +8877,7 @@ def OneFlow_ScalarFmodOp : OneFlow_BaseOp<"scalar_fmod", [NoMemoryEffect, Declar
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_ScalarLogicalAndOp : OneFlow_BaseOp<"scalar_logical_and", [NoMemoryEffect, NoGrad, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -8826,6 +8897,7 @@ def OneFlow_ScalarLogicalAndOp : OneFlow_BaseOp<"scalar_logical_and", [NoMemoryE
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_ScalarLogicalEqualOp : OneFlow_BaseOp<"scalar_logical_equal", [NoMemoryEffect, NoGrad, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -8845,6 +8917,7 @@ def OneFlow_ScalarLogicalEqualOp : OneFlow_BaseOp<"scalar_logical_equal", [NoMem
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_ScalarLogicalGreaterOp : OneFlow_BaseOp<"scalar_logical_greater", [NoMemoryEffect, NoGrad, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -8864,6 +8937,7 @@ def OneFlow_ScalarLogicalGreaterOp : OneFlow_BaseOp<"scalar_logical_greater", [N
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_ScalarLogicalGreaterEqualOp : OneFlow_BaseOp<"scalar_logical_greater_equal", [NoMemoryEffect, NoGrad, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -8883,6 +8957,7 @@ def OneFlow_ScalarLogicalGreaterEqualOp : OneFlow_BaseOp<"scalar_logical_greater
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_ScalarLogicalInplaceGreaterOp : OneFlow_BaseOp<"scalar_logical_inplace_greater", [NoMemoryEffect, NoGrad, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -8921,6 +8996,7 @@ def OneFlow_ScalarLogicalLessOp : OneFlow_BaseOp<"scalar_logical_less", [NoMemor
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_ScalarLogicalLessEqualOp : OneFlow_BaseOp<"scalar_logical_less_equal", [NoMemoryEffect, NoGrad, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -8940,6 +9016,7 @@ def OneFlow_ScalarLogicalLessEqualOp : OneFlow_BaseOp<"scalar_logical_less_equal
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_ScalarLogicalNotEqualOp : OneFlow_BaseOp<"scalar_logical_not_equal", [NoMemoryEffect, NoGrad, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -8959,6 +9036,7 @@ def OneFlow_ScalarLogicalNotEqualOp : OneFlow_BaseOp<"scalar_logical_not_equal",
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_ScalarLogicalOrOp : OneFlow_BaseOp<"scalar_logical_or", [NoMemoryEffect, NoGrad, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -8978,6 +9056,7 @@ def OneFlow_ScalarLogicalOrOp : OneFlow_BaseOp<"scalar_logical_or", [NoMemoryEff
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_ScalarLogicalXorOp : OneFlow_BaseOp<"scalar_logical_xor", [NoMemoryEffect, NoGrad, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -8997,6 +9076,7 @@ def OneFlow_ScalarLogicalXorOp : OneFlow_BaseOp<"scalar_logical_xor", [NoMemoryE
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_ScalarMulOp : OneFlow_BaseOp<"scalar_mul", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -9016,6 +9096,7 @@ def OneFlow_ScalarMulOp : OneFlow_BaseOp<"scalar_mul", [NoMemoryEffect, DeclareO
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_ScalarMulByTensorOp : OneFlow_BaseOp<"scalar_mul_by_tensor", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -9049,6 +9130,7 @@ def OneFlow_ScalarDivOp : OneFlow_BaseOp<"scalar_div", [NoMemoryEffect, DeclareO
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_ScalarPowOp : OneFlow_BaseOp<"scalar_pow", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -9068,6 +9150,7 @@ def OneFlow_ScalarPowOp : OneFlow_BaseOp<"scalar_pow", [NoMemoryEffect, DeclareO
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_ScalarPowGradOp : OneFlow_BaseOp<"scalar_pow_grad", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -9107,6 +9190,7 @@ def OneFlow_ScalarReversePowOp : OneFlow_BaseOp<"scalar_reverse_pow", [NoMemoryE
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_ScalarReversePowGradOp : OneFlow_BaseOp<"scalar_reverse_pow_grad", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -9248,6 +9332,7 @@ def OneFlow_LogSoftmaxOp : OneFlow_BaseOp<"log_softmax", [NoMemoryEffect, Declar
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_LogSoftmaxGradOp : OneFlow_BaseOp<"log_softmax_grad", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -9593,6 +9678,7 @@ def OneFlow_AcosOp : OneFlow_BaseOp<"acos", [NoMemoryEffect, DeclareOpInterfaceM
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_AcosGradOp : OneFlow_BaseOp<"acos_grad", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -9620,6 +9706,7 @@ def OneFlow_AcoshOp : OneFlow_BaseOp<"acosh", [NoMemoryEffect, DeclareOpInterfac
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_AcoshGradOp : OneFlow_BaseOp<"acosh_grad", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -9647,6 +9734,7 @@ def OneFlow_AsinOp : OneFlow_BaseOp<"asin", [NoMemoryEffect, DeclareOpInterfaceM
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_AsinGradOp : OneFlow_BaseOp<"asin_grad", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -9674,6 +9762,7 @@ def OneFlow_AsinhOp : OneFlow_BaseOp<"asinh", [NoMemoryEffect, DeclareOpInterfac
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_AsinhGradOp : OneFlow_BaseOp<"asinh_grad", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -9701,6 +9790,7 @@ def OneFlow_AtanOp : OneFlow_BaseOp<"atan", [NoMemoryEffect, DeclareOpInterfaceM
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_Atan2Op : OneFlow_BaseOp<"atan2", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -9772,6 +9862,7 @@ def OneFlow_AtanhOp : OneFlow_BaseOp<"atanh", [NoMemoryEffect, DeclareOpInterfac
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_AtanhGradOp : OneFlow_BaseOp<"atanh_grad", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -9799,6 +9890,7 @@ def OneFlow_CosOp : OneFlow_BaseOp<"cos", [NoMemoryEffect, DeclareOpInterfaceMet
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_CosGradOp : OneFlow_BaseOp<"cos_grad", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -9826,6 +9918,7 @@ def OneFlow_CoshOp : OneFlow_BaseOp<"cosh", [NoMemoryEffect, DeclareOpInterfaceM
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_CoshGradOp : OneFlow_BaseOp<"cosh_grad", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -9857,6 +9950,7 @@ def OneFlow_HardtanhOp : OneFlow_BaseOp<"hardtanh", [NoMemoryEffect, DeclareOpIn
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_HardtanhGradOp : OneFlow_BaseOp<"hardtanh_grad", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -9888,6 +9982,7 @@ def OneFlow_SinOp : OneFlow_BaseOp<"sin", [NoMemoryEffect, DeclareOpInterfaceMet
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_SinGradOp : OneFlow_BaseOp<"sin_grad", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -9915,6 +10010,7 @@ def OneFlow_SinhOp : OneFlow_BaseOp<"sinh", [NoMemoryEffect, DeclareOpInterfaceM
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_SinhGradOp : OneFlow_BaseOp<"sinh_grad", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -9942,6 +10038,7 @@ def OneFlow_TanOp : OneFlow_BaseOp<"tan", [NoMemoryEffect, DeclareOpInterfaceMet
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_TanGradOp : OneFlow_BaseOp<"tan_grad", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -9969,6 +10066,7 @@ def OneFlow_TanhOp : OneFlow_BaseOp<"tanh", [NoMemoryEffect, DeclareOpInterfaceM
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_TanhGradOp : OneFlow_BaseOp<"tanh_grad", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -9996,6 +10094,7 @@ def OneFlow_NotEqualZeroOp : OneFlow_BaseOp<"not_equal_zero", [NoMemoryEffect, D
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 #endif // GET_ONEFLOW_TRIGONOMETRIC_OP_DEFINITIONS
@@ -10168,6 +10267,7 @@ def OneFlow_CeluOp : OneFlow_BaseOp<"celu", [NoMemoryEffect, DeclareOpInterfaceM
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_CopyOp : OneFlow_BaseOp<"copy", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -10248,6 +10348,7 @@ def OneFlow_EluOp : OneFlow_BaseOp<"elu", [NoMemoryEffect, DeclareOpInterfaceMet
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_ExpandOp : OneFlow_BaseOp<"expand", [NoMemoryEffect, SupportNonContiguous, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -10330,6 +10431,7 @@ def OneFlow_GeluOp : OneFlow_BaseOp<"gelu", [NoMemoryEffect, DeclareOpInterfaceM
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_FastGeluOp : OneFlow_BaseOp<"fast_gelu", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -10369,6 +10471,7 @@ def OneFlow_HardsigmoidOp : OneFlow_BaseOp<"hardsigmoid", [NoMemoryEffect, Decla
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_HardShrinkOp : OneFlow_BaseOp<"hardshrink", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -10385,6 +10488,7 @@ def OneFlow_HardShrinkOp : OneFlow_BaseOp<"hardshrink", [NoMemoryEffect, Declare
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_HardswishOp : OneFlow_BaseOp<"hardswish", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -10398,6 +10502,7 @@ def OneFlow_HardswishOp : OneFlow_BaseOp<"hardswish", [NoMemoryEffect, DeclareOp
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_LeakyReluOp : OneFlow_BaseOp<"leaky_relu", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -10414,6 +10519,7 @@ def OneFlow_LeakyReluOp : OneFlow_BaseOp<"leaky_relu", [NoMemoryEffect, DeclareO
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_RReluOp : OneFlow_BaseOp<"rrelu", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -10447,6 +10553,7 @@ def OneFlow_Log2Op : OneFlow_BaseOp<"log2", [NoMemoryEffect, DeclareOpInterfaceM
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_Log10Op : OneFlow_BaseOp<"log10", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -10460,6 +10567,7 @@ def OneFlow_Log10Op : OneFlow_BaseOp<"log10", [NoMemoryEffect, DeclareOpInterfac
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_LogicalNotOp : OneFlow_BaseOp<"logical_not", [NoMemoryEffect, NoGrad, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -10486,6 +10594,7 @@ def OneFlow_MishOp : OneFlow_BaseOp<"mish", [NoMemoryEffect, DeclareOpInterfaceM
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_NarrowOp : OneFlow_BaseOp<"narrow", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -10504,6 +10613,7 @@ def OneFlow_NarrowOp : OneFlow_BaseOp<"narrow", [NoMemoryEffect, DeclareOpInterf
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_OneHotOp : OneFlow_BaseOp<"one_hot", [NoMemoryEffect, NoGrad, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -10626,6 +10736,7 @@ def OneFlow_SeluOp : OneFlow_BaseOp<"selu", [NoMemoryEffect, DeclareOpInterfaceM
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_SiluOp : OneFlow_BaseOp<"silu", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>, DeclareOpInterfaceMethods<NCHWCompatibleInterface>]> {
@@ -10639,6 +10750,7 @@ def OneFlow_SiluOp : OneFlow_BaseOp<"silu", [NoMemoryEffect, DeclareOpInterfaceM
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_SoftShrinkOp: OneFlow_BaseOp<"softshrink", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -10655,6 +10767,7 @@ def OneFlow_SoftShrinkOp: OneFlow_BaseOp<"softshrink", [NoMemoryEffect, DeclareO
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_SoftsignOp : OneFlow_BaseOp<"softsign", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -10668,6 +10781,7 @@ def OneFlow_SoftsignOp : OneFlow_BaseOp<"softsign", [NoMemoryEffect, DeclareOpIn
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_SortOp : OneFlow_BaseOp<"sort", [NoMemoryEffect, NoGrad, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -10744,6 +10858,7 @@ def OneFlow_ThresholdOp : OneFlow_BaseOp<"threshold", [NoMemoryEffect, DeclareOp
   let has_physical_tensor_desc_infer_fn = 1;
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_TransposeOp : OneFlow_BaseOp<"transpose", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {
@@ -10761,6 +10876,7 @@ def OneFlow_TransposeOp : OneFlow_BaseOp<"transpose", [NoMemoryEffect, DeclareOp
   let has_get_sbp_fn = 1;
   let has_data_type_infer_fn = 1;
   let hasFolder = 1;
+  let has_compute_complexity_fn = 1;
 }
 
 def OneFlow_AsStridedOp : OneFlow_BaseOp<"as_strided", [NoMemoryEffect, DeclareOpInterfaceMethods<UserOpCompatibleInterface>]> {

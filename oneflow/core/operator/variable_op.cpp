@@ -141,6 +141,19 @@ Operator::DumpNdSbpSignatureForOpConfFn VariableOp::GetDumpNdSbpSignatureForOpCo
   };
 }
 
+Maybe<double> VariableOp::GetComputeComplexity(
+    NdSbpSignature* sbp_signature,
+    std::function<const BlobDesc&(const std::string& bn)> logical_blob_desc4bn,
+    const ParallelDesc& parallel_desc) const {
+  std::cout << "VariableOp::GetComputeComplexity: 4" << std::endl;
+  return 4.0;
+}
+// /*static*/ Maybe<double> VariableOp::GetComputeComplexity(user_op::ComputeComplexityFnContext*
+// ctx) {
+//   std::cout<<"VariableOp::GetComputeComplexity: 4"<<std::endl;
+//   return 4.0;
+// }
+
 REGISTER_OP(OperatorConf::kVariableConf, VariableOp);
 REGISTER_OP_SAME_OUTPUT_BLOB_REGST_NUM(OperatorConf::kVariableConf, 1);
 REGISTER_INTERFACE_OP(OperatorConf::kVariableConf);

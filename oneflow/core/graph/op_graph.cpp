@@ -19,6 +19,7 @@ limitations under the License.
 #include "oneflow/core/job/lazy_mode.h"
 #include "oneflow/core/auto_parallel/algorithm_util.h"
 #include "oneflow/core/framework/nd_sbp.h"
+#include "oneflow/core/job/sbp_parallel.pb.h"
 
 namespace oneflow {
 
@@ -583,12 +584,56 @@ void OpGraph::PrintSBPGraphDebugInfo() const {
   });
   std::vector<int32_t> str_order;
 
+  std::cout << "--------------------------------------------------------------" << std::endl;
+  std::cout << "------------------get cost by running time start--------------" << std::endl;
+  double total_comp_cost_0 = 0;
+  for (int32_t i = 0; i < NodeList.size(); i++) {
+    OpNode* op_node = NodeList[order[i]];
+    std::cout << op_node->op().op_name() << " (^_^): " << op_node->op().op_conf().op_type_case()
+              << std::endl;
+    auto LogicalBlobDesc4Bn = [&](const std::string& bn) -> const BlobDesc& {
+      const LogicalBlobId& lbi = op_node->op().BnInOp2Lbi(bn);
+      return op_node->LogicalBlobDesc4Lbi(lbi);
+    };
+    const ParallelDesc& parallel_desc = op_node->parallel_desc();
+
+    // SbpNode* sbp_node = op_name2sbp_node_[op_node->op().op_name()];
+
+    // auto GetCompCost = [&](int32_t sbp_id) -> Maybe<void> {
+    //   double comp_cost = JUST(op_node->op().GetComputeComplexity(
+    //       &sbp_node->sbp_sig_list_[sbp_id], LogicalBlobDesc4Bn, parallel_desc));
+    //   return Maybe<void>::Ok();
+    // };
+
+    auto sig = op_node->nd_sbp_signature();
+    // std::cout << "sbp_node->sbp_sig_list_.size(): " << sbp_node->sbp_sig_list_.size() <<
+    // std::endl;
+    double comp_cost =
+        CHECK_JUST(op_node->op().GetComputeComplexity(&sig, LogicalBlobDesc4Bn, parallel_desc));
+
+    // if (comp_cost > GetValidMaxCopyCost()) {
+    //   sbp_node->cost_[sbp_id] = comp_cost;
+    // } else {
+    //   sbp_node->cost_[sbp_id] =
+    //       cost_ratio_ * comp_cost
+    //       * JUST(op_node->op().GetInputOutputFastestTimeShape())->elem_cnt();
+    // }
+    std::cout << "comp_cost: " << comp_cost << std::endl;
+    total_comp_cost_0 += comp_cost;
+    // for (int32_t sbp_id = 0; sbp_id < sbp_node->sbp_sig_list_.size(); sbp_id++) {
+    // }
+  }
+  std::cout << "Total cost: " << total_comp_cost_0 << std::endl;
+  std::cout << "--------------------------------------------------------------" << std::endl;
+
   // test debug
   std::cout << "Finish deciding order" << std::endl;
 
   for (int32_t i = 0; i < NodeList.size(); i++) {
     OpNode* op_node = NodeList[order[i]];
-    std::cout << op_node->op().op_name() << " (^_^):" << std::endl;
+    // std::cout << op_node->op().op_name() << " (^_^):" << std::endl;
+    std::cout << op_node->op().op_name() << " (^_^): " << op_node->op().op_conf().op_type_case()
+              << std::endl;
     // Sort before printing
     const auto& op_input_bns = op_node->op().input_bns();
     auto comp = [](const std::string& a, const std::string& b) { return a.compare(b) > 0; };
